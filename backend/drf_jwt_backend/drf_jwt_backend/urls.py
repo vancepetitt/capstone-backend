@@ -20,4 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
     path('api/cars/', include('cars.urls')),
+    path('api/families/', include('families.urls')),
+    path('api/materials/', include('materials.urls')),
+    path('api/environments/', include('environments.urls')),
+    path('api/test_data/', include('test_data.urls')),
 ]
