@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'cars.apps.CarsConfig',  # This app is for example use only
     'families',
     'materials',
-    'environments'
+    'environments',
+    'test_data'
 ]
 
 MIDDLEWARE = [
