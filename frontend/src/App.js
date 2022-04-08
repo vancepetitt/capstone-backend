@@ -6,6 +6,9 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import SelectedDataDisplayPage from "./components/pages/SelectedDataDisplayPage/SelectedDataDisplayPage";
+import EnvironmentExplorerPage from "./components/pages/EnvironmentExplorerPage/EnvironmentExplorerPage";
+import TestDataInputPage from "./components/pages/TestDataInputPage/TestDataInputPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -24,6 +27,30 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/datadisplay"
+          element={
+            <PrivateRoute>
+              <SelectedDataDisplayPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/envexplorer"
+          element={
+            <PrivateRoute>
+              <EnvironmentExplorerPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/input"
+          element={
+            <PrivateRoute>
+              <TestDataInputPage />
             </PrivateRoute>
           }
         />
