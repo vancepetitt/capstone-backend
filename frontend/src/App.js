@@ -6,9 +6,9 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import SelectedDataDisplayPage from "./components/pages/SelectedDataDisplayPage/SelectedDataDisplayPage";
-import EnvironmentExplorerPage from "./components/pages/EnvironmentExplorerPage/EnvironmentExplorerPage";
-import TestDataInputPage from "./components/pages/TestDataInputPage/TestDataInputPage";
+import SelectedDataDisplayPage from "./pages/SelectedDataDisplayPage/SelectedDataDisplayPage";
+import TestDataInputPage from "./pages/TestDataInputPage/TestDataInputPage";
+import EnvironmentExplorerPage from "./pages/EnvironmentExplorerPage/EnvironmentExplorerPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
