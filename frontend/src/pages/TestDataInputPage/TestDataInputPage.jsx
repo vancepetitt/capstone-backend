@@ -8,6 +8,9 @@ const TestDataInputPage = (props) => {
     return ( 
         <div>
             <h1>Input Data Here</h1>
+            <form>
+                
+            </form>
         </div>
      );
 }
