@@ -33,6 +33,9 @@ const HomePage = () => {
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
       <HomeData />
+      <h2>Welcome to the ChemCompatibility app!!</h2>
+      <p>This appication....</p>
+      <p>Using the app: </p>
       {cars &&
         cars.map((car) => (
           <p key={car.id}>

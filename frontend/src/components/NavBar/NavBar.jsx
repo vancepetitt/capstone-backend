@@ -16,6 +16,18 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
+          <button onClick={() => navigate("/materials")}>Data by Material</button>
+        </li>
+        <li>
+          <button onClick={() => navigate("/envexplorer")}>Environment Explorer</button>
+        </li>
+        <li>
+          <button onClick={() => navigate("/input")}>Input Test Data</button>
+        </li>
+        <li>
+          <button onClick={() => navigate("/login")}>Login</button>
+        </li>
+        <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>
           ) : (

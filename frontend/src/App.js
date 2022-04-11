@@ -10,6 +10,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SelectedDataDisplayPage from "./pages/SelectedDataDisplayPage/SelectedDataDisplayPage";
 import TestDataInputPage from "./pages/TestDataInputPage/TestDataInputPage";
 import EnvironmentExplorerPage from "./pages/EnvironmentExplorerPage/EnvironmentExplorerPage";
+import MaterialSearchPage from "./pages/MaterialSearchPage/MaterialSearchPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -37,6 +38,14 @@ function App() {
           element={
             <PrivateRoute>
               <SelectedDataDisplayPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/materials"
+          element={
+            <PrivateRoute>
+              <MaterialSearchPage />
             </PrivateRoute>
           }
         />
