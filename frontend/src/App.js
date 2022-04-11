@@ -21,6 +21,9 @@ import PrivateRoute from "./utils/PrivateRoute";
 import React, { useState, useEffect} from "react";
 
 function App() {
+  
+  const [clickedDataSet, setClickedDataSet] = useState([''])
+
   return (
     <div>
       <Navbar />
