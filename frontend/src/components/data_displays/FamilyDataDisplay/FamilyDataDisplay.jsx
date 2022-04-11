@@ -13,7 +13,7 @@ const FamilyDataDisplay = () => {
 
     async function getFamily() {
         let response = await axios.get(`http://127.0.0.1:8000/api/families/${state.test.material.family.id}/`)
-        console.log('family from getFamily', response.data)
+        console.log('family', response.data)
         setFamilyForDisplay(response.data)
     }
 
