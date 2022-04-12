@@ -3,29 +3,33 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import {Chart} from "react-google-charts";
 
-const FamilyDataDisplay = (props) => {
+const FamilyDataDisplay = ({tests}) => {
     
     const {state} = useLocation();
     const [familyForDisplay, setFamilyForDisplay] = useState(['']);
-    const [environmentTests, setEnvironmentTests] = useState(['']);
     
-    useEffect(() => {
-        getInitialResponse()
-    }, [])
+    console.log(tests)
 
-    async function getInitialResponse() {
-        let response2 = await axios.get(`http://127.0.0.1:8000/api/families/${state.test.material.family.id}/`)
-        console.log('family', response2.data)
-        setFamilyForDisplay(response2.data)
-        
-        let response3 = await axios.get('http://127.0.0.1:8000/api/test_data/')
-        console.log('env tests', environmentTests)
-        setEnvironmentTests(response3.data)
-    }
+    let filteredTests = tests.filter(test => test.environment.id === state.test.environment.id && test.material.family.id === state.test.material.family.id)
+    console.log('filtered', filteredTests)
+
+    let array = filteredTests.map(test => {
+
+        filteredTests.forEach(test => {
+            return [test.material.designation, test.corrosion_rate]
+        });
+        return [test.material.designation, parseInt(test.corrosion_rate)]
+    });
+    console.log(array)
 
     function generateFamilyChartData() {
-        console.log('familydata')
-    }
+        const data = [
+            ["material", array],
+            ...array
+        ];
+        console.log("data", data)
+        return data;     
+    };
 
 
 
