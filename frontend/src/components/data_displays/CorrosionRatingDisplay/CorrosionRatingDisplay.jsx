@@ -36,22 +36,22 @@ const CorrosionRatingDisplay = (props) => {
         };
         console.log(rating);
         setRating(rating);
-    };
+    // };
 
     // function generateRatingDescription({rating}) {
-    //     let ratingDescription = ''
-    //     if (rating === 'Recommended') {
-    //         ratingDescription = 'Chemically compatible. Material is recommended for use in this environment with the least concern.';
-    //     }
-    //     else if (rating === 'Recommended with caution') {
-    //         ratingDescription = 'Material may be used if proper provisons are taken. A thorough inspection and maintenance plan targeting any localized corrosion must be used to mitigate risk.';
-    //     }
-    //     else if (rating === 'Not Recommended') {
-    //         ratingDescription = 'Material not recommended for use in this environment. The corroson rate or localized attack is expected to cause a potentially rapid failure.';
-    //     };
-    //     console.log(ratingDescription);
-    //     setRatingDescription(ratingDescription);
-    // };
+        let ratingDescription = ''
+        if (rating === 'Recommended') {
+            ratingDescription = 'Chemically compatible. Material is recommended for use in this environment with the least concern.';
+        }
+        else if (rating === 'Recommended with caution') {
+            ratingDescription = 'Material may be used if proper provisons are taken. A thorough inspection and maintenance plan targeting any localized corrosion must be used to mitigate risk.';
+        }
+        else if (rating === 'Not Recommended') {
+            ratingDescription = 'Material not recommended for use in this environment. The corroson rate or localized attack is expected to cause a potentially rapid failure.';
+        };
+        console.log(ratingDescription);
+        setRatingDescription(ratingDescription);
+    };
 
     useEffect (() => {
         generateRating()
@@ -78,7 +78,7 @@ const CorrosionRatingDisplay = (props) => {
             <Chart chartType="ColumnChart" width="50%" height="400px" data={generateDataForChart()}></Chart>
             <p>Localized observations: {state.test.localized}</p>
             <h2>Rating: {rating}</h2>
-            {/* <p>{ratingDescription}</p> */}
+            <p>{ratingDescription}</p>
         </div>
      );
 };
