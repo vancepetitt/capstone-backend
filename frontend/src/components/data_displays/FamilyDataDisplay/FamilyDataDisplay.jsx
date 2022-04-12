@@ -18,7 +18,7 @@ const FamilyDataDisplay = ({tests}) => {
         filteredTests.forEach(test => {
             return [test.material.designation, test.corrosion_rate]
         });
-        return [test.material.designation, parseInt(test.corrosion_rate)]
+        return [test.material.designation, parseFloat(test.corrosion_rate)]
     });
     console.log(array)
 
