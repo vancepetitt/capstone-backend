@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import FamilyDataDisplay from "../../components/data_displays/FamilyDataDisplay/FamilyDataDisplay";
 import CorrosionRatingDisplay from "../../components/data_displays/CorrosionRatingDisplay/CorrosionRatingDisplay";
 import axios from "axios";
+import TemperatureVariation from "../../components/data_displays/TemperatureVariation/TemperatureVariation";
 
 const SelectedDataDisplayPage = () => {
     
@@ -27,6 +28,7 @@ const SelectedDataDisplayPage = () => {
         <div>
             <h1>Data Display</h1>
             <CorrosionRatingDisplay test={state.test}/>
+            <TemperatureVariation tests={tests} test={state.test}/>
             <FamilyDataDisplay tests={tests} test={state.test}/>
         </div>
      );

@@ -8,7 +8,7 @@ const FamilyDataDisplay = ({tests}) => {
     const {state} = useLocation();
     const [familyForDisplay, setFamilyForDisplay] = useState(['']);
     
-    console.log(tests)
+    //console.log(tests)
 
     let filteredTests = tests.filter(test => test.environment.id === state.test.environment.id && test.material.family.id === state.test.material.family.id)
     console.log('filtered', filteredTests)
@@ -27,7 +27,7 @@ const FamilyDataDisplay = ({tests}) => {
             ["material", array],
             ...array
         ];
-        console.log("data", data)
+        console.log("family data", data)
         return data;     
     };
 
