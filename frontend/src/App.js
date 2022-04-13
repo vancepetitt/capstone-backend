@@ -12,6 +12,7 @@ import TestDataInputPage from "./pages/TestDataInputPage/TestDataInputPage";
 import EnvironmentExplorerPage from "./pages/EnvironmentExplorerPage/EnvironmentExplorerPage";
 import MaterialSearchPage from "./pages/MaterialSearchPage/MaterialSearchPage";
 import SearchResultsMaterialPage from "./pages/SearchResultsMaterialPage/SearchResultsMaterialPage";
+import SearchResultsEnvironmentPage from "./pages/SearchResultsEnvironmentPage/SearchResultsEnvironmentPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -75,7 +76,15 @@ function App() {
           path="/envexplorer"
           element={
             <PrivateRoute>
-              <EnvironmentExplorerPage />
+              <EnvironmentExplorerPage completeTestData={completeTestData}/>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/searchenvironment"
+          element={
+            <PrivateRoute>
+              <SearchResultsEnvironmentPage completeTestData={completeTestData}/>
             </PrivateRoute>
           }
         />

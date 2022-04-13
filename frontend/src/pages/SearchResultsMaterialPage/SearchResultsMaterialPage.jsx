@@ -6,19 +6,9 @@ import MaterialSearchResults from "../../components/search_displays/MaterialSear
 
 const SearchResultsMaterialPage = ({completeTestData}) => {
     
-    const [user, token] = useAuth();
-    //const [tests, setTests] = useState([])   
+    const [user, token] = useAuth(); 
     const {state} = useLocation();
     const navigate = useNavigate();
-
-    // useEffect (() => {
-    //     getTests()
-    // }, [])
-
-    // async function getTests() {
-    //     let response = await axios.get('http://127.0.0.1:8000/api/test_data/')
-    //     setTests(response.data)
-    // };
     
     console.log(state.searchTerm)
     return ( 

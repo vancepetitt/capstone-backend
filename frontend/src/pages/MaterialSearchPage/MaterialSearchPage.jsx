@@ -8,7 +8,6 @@ const MaterialSearchPage = ({completeTestResults}) => {
     
     const [user, token] = useAuth();
     const [searchTerm, setSearchTerm] = useState('');
-    const [tests, setTests] = useState([])  
     const navigate = useNavigate();
     
     const handleSubmit = (event) => {

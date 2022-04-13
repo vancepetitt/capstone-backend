@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const MaterialsSearchResultsDisplay = ({searchData}) => {
+const EnvironmentSearchResultsDisplay = ({searchData}) => {
     
     const navigate = useNavigate();
-    console.log('searchDataMat', searchData)
-    
+    console.log('searchDataEnv', searchData)
+
     return ( 
         <div>
             <table>
@@ -38,4 +38,4 @@ const MaterialsSearchResultsDisplay = ({searchData}) => {
      );
 }
  
-export default MaterialsSearchResultsDisplay;
+export default EnvironmentSearchResultsDisplay;
