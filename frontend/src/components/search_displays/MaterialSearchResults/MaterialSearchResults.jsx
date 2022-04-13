@@ -5,37 +5,26 @@ import MaterialsSearchResultsDisplay from "../MaterialsSearchResultsDisplay/Mate
 const MaterialSearchResults = ({completeTestData, searchTerm}) => {
 
     const navigate = useNavigate();
-    const [searchData, setSearchData] = useState([''])
+    const [searchData, setSearchData] = useState([])
 
     console.log(completeTestData, searchTerm)
     
     useEffect(() => {
-          //function searchFilter() {
+        const searchFilter = function() {
             let response = completeTestData.filter((test) => {
-                if(test.material.family.family.toLowerCase().includes(searchTerm.toLowerCase())) {
+                if(test.material.family.family.toLowerCase().includes(searchTerm.toLowerCase()) || test.material.designation.toLowerCase().includes(searchTerm.toLowerCase())) {
                     return true
                 } else {
                     return false
                 }
             })
-            setSearchData(response)        
-        //};
+            setSearchData(response)
+        };
+        searchFilter();
         
     }, []);
 
     console.log(searchData)
-    
-    // //function searchFilter() {
-    //     let response = completeTestData.filter((test) => {
-    //         if(test.material.family.family.toLowerCase().includes(searchTerm.toLowerCase())) {
-    //             return true
-    //         } else {
-    //             return false
-    //         }
-    //     })
-    //     setSearchData(response)        
-    // //};
-    // console.log(searchData)
 
     return ( 
         <div>

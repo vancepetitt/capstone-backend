@@ -20,7 +20,7 @@ const MaterialsSearchResultsDisplay = ({searchData}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {searchData.map((test) => {
+                    {searchData.length > 0 && searchData.map((test) => {
                         return (
                             <tr key={test.id}>
                                     <td>{test.environment.name}</td>
