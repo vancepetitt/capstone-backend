@@ -11,6 +11,7 @@ import SelectedDataDisplayPage from "./pages/SelectedDataDisplayPage/SelectedDat
 import TestDataInputPage from "./pages/TestDataInputPage/TestDataInputPage";
 import EnvironmentExplorerPage from "./pages/EnvironmentExplorerPage/EnvironmentExplorerPage";
 import MaterialSearchPage from "./pages/MaterialSearchPage/MaterialSearchPage";
+import SearchResultsMaterialPage from "./pages/SearchResultsMaterialPage/SearchResultsMaterialPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -22,7 +23,17 @@ import React, { useState, useEffect} from "react";
 
 function App() {
   
-  const [clickedDataSet, setClickedDataSet] = useState([''])
+  const [completeTestData, setCompleteTestData] = useState([''])
+  
+  useEffect(() => {
+    getCompleteTestData()
+  }, []);
+
+  async function getCompleteTestData() {
+    let response = await axios.get('http://127.0.0.1:8000/api/test_data/')
+    console.log('complete test data', response.data)
+    setCompleteTestData(response.data)
+  };
 
   return (
     <div>
@@ -48,7 +59,15 @@ function App() {
           path="/materials"
           element={
             <PrivateRoute>
-              <MaterialSearchPage />
+              <MaterialSearchPage completeTestData={completeTestData}/>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/searchmaterial"
+          element={
+            <PrivateRoute>
+              <SearchResultsMaterialPage completeTestData={completeTestData}/>
             </PrivateRoute>
           }
         />

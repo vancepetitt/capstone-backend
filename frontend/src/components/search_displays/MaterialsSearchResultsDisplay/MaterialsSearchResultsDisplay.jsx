@@ -1,15 +1,13 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const HomeData = ({completeTestData}) => {
-
-    const {state} = useLocation();
+const MaterialsSearchResultsDisplay = ({searchData}) => {
+    
     const navigate = useNavigate();
-
-    return (  
+    console.log('searchData', searchData)
+    
+    return ( 
         <div>
-            <h2>All Historic Data:</h2>
             <table>
                 <thead>
                     <tr>
@@ -22,7 +20,7 @@ const HomeData = ({completeTestData}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {completeTestData.map((test) => {
+                    {searchData.map((test) => {
                         return (
                             <tr key={test.id}>
                                     <td>{test.environment.name}</td>
@@ -37,7 +35,7 @@ const HomeData = ({completeTestData}) => {
                 </tbody>
             </table>
         </div>
-    );
+     );
 }
  
-export default HomeData;
+export default MaterialsSearchResultsDisplay;

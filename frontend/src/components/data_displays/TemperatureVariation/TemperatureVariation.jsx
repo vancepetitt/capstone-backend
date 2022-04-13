@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import useAuth from "../../../hooks/useAuth";
 import {Chart} from "react-google-charts";
 
 const TemperatureVariation = ({tests}) => {
     
+    const [user, token] = useAuth();
     const {state} = useLocation();
 
     function generateTempChartData() {
@@ -44,4 +46,4 @@ const TemperatureVariation = ({tests}) => {
      );
 };
 
-export default TemperatureVariation
+export default TemperatureVariation;
