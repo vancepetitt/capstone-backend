@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'families',
     'materials',
     'environments',
-    'test_data'
+    'test_data',
+    'comments',
 ]
 
 MIDDLEWARE = [

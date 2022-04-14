@@ -24,4 +24,5 @@ urlpatterns = [
     path('api/materials/', include('materials.urls')),
     path('api/environments/', include('environments.urls')),
     path('api/test_data/', include('test_data.urls')),
+    path('api/comments/', include('comments.urls')),
 ]
