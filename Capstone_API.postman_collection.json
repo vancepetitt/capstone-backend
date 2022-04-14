@@ -64,7 +64,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"corrosion_rate\": 22,\r\n    \"localized\": \"none\",\r\n    \"environment_id\": 2,\r\n    \"material_id\": 2\r\n}",
+							"raw": "{\r\n    \"corrosion_rate\": 5,\r\n    \"localized\": \"none\",\r\n    \"environment_id\": 2,\r\n    \"material_id\": 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -116,13 +116,13 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Update Test Data",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"corrosion_rate\": 0.22,\r\n    \"localized\": \"none\",\r\n    \"environment_id\": 2,\r\n    \"material_id\": 2\r\n}",
+							"raw": "{\r\n    \"corrosion_rate\": 11,\r\n    \"localized\": \"none\",\r\n    \"environment_id\": 2,\r\n    \"material_id\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -143,6 +143,152 @@
 								"api",
 								"test_data",
 								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get All Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/test_data/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"test_data",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"corrosion_rate\": 22,\r\n    \"localized\": \"none\",\r\n    \"environment_id\": 2,\r\n    \"material_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/test_data/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"test_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"corrosion_rate\": 0.22,\r\n    \"localized\": \"none\",\r\n    \"environment_id\": 2,\r\n    \"material_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1",
 								""
 							]
 						}
@@ -403,7 +549,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/environments/1",
+							"raw": "http://127.0.0.1:8000/api/environments/2",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -415,7 +561,7 @@
 							"path": [
 								"api",
 								"environments",
-								"1"
+								"2"
 							]
 						}
 					},
