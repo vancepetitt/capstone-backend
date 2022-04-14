@@ -5,6 +5,8 @@ import FamilyDataDisplay from "../../components/data_displays/FamilyDataDisplay/
 import CorrosionRatingDisplay from "../../components/data_displays/CorrosionRatingDisplay/CorrosionRatingDisplay";
 import axios from "axios";
 import TemperatureVariation from "../../components/data_displays/TemperatureVariation/TemperatureVariation";
+import CommentList from "../../components/commenting/CommentList/CommentList";
+import CommentForm from "../../components/commenting/CommentForm/CommentForm";
 
 const SelectedDataDisplayPage = () => {
     
@@ -28,6 +30,8 @@ const SelectedDataDisplayPage = () => {
         <div>
             <h1>Data Display</h1>
             <CorrosionRatingDisplay test={state.test}/>
+            <CommentForm test={state.test}/>
+            <CommentList test={state.test}/>
             <TemperatureVariation tests={tests} test={state.test}/>
             <FamilyDataDisplay tests={tests} test={state.test}/>
         </div>
