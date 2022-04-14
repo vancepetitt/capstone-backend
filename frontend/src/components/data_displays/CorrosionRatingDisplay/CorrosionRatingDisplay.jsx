@@ -8,11 +8,11 @@ const CorrosionRatingDisplay = (props) => {
     
     const [rating, setRating] = useState(['']);
     const [ratingDescription, setRatingDescription] = useState(['']);
+    const [ratingColor, setRatingColor] = useState(['']);
     
     let material = state.test.material.designation;
     let rate = parseInt(state.test.corrosion_rate);
     let localized = state.test.localized;
-    let style = '';
 
     function generateRating () {
         let rating = '';
@@ -36,9 +36,7 @@ const CorrosionRatingDisplay = (props) => {
         };
         console.log(rating);
         setRating(rating);
-    // };
 
-    // function generateRatingDescription({rating}) {
         let ratingDescription = ''
         if (rating === 'Recommended') {
             ratingDescription = 'Chemically compatible. Material is recommended for use in this environment with the least concern.';
@@ -51,6 +49,19 @@ const CorrosionRatingDisplay = (props) => {
         };
         console.log(ratingDescription);
         setRatingDescription(ratingDescription);
+
+        let ratingColor = ''
+        if (rating === 'Recommended') {
+            ratingColor = 'Green';
+        }
+        else if (rating === 'Recommended with caution') {
+            ratingColor = 'Yellow';
+        }
+        else if (rating === 'Not Recommended') {
+            ratingColor = 'Red';
+        };
+        console.log('color', ratingColor);
+        setRatingColor(ratingColor);
     };
 
     useEffect (() => {
@@ -60,8 +71,8 @@ const CorrosionRatingDisplay = (props) => {
     function generateDataForChart() {
 
         const data = [
-            ["material", "rate"],
-            [material, rate]
+            ["material", "rate", {role: "style"}],
+            [material, rate, ratingColor]
         ];
         console.log("data", data)
         return data;        
