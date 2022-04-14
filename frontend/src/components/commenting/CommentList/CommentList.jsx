@@ -10,10 +10,9 @@ const CommentList = ({test}) => {
     async function fetchComments() {
         try{
             let response = await axios.get('http://127.0.0.1:8000/api/comments/')
-            console.log(response.data)
-            console.log(comments)
+            console.log('allcomments', response.data)
             setComments(response.data.filter((comment)=>{
-                if (comment.environment_id===test.environment.id) {return comment}}));
+                if (comment.environment.id===test.environment.id) {return comment}}));
         }
         catch(error){
             console.log(error.message)
@@ -36,4 +35,4 @@ const CommentList = ({test}) => {
     );
 }
 
-export default CommentList
+export default CommentList;
