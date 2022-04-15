@@ -1,0 +1,27 @@
+form input {
+    width: 50%;
+    font-size:medium;
+    margin-left: 5%;
+}
+
+label {
+    font-size: large;
+    font-weight: 200;
+}
+
+form button {
+    margin-left: 5%;
+}
+
+form {
+    
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-color: purple;
+    border-radius: 2%;
+    border-width: 5px;
+    border-style: solid;
+    background-color: lightgray;
+    box-shadow:0 0 10px #9ecaed;
+}
+

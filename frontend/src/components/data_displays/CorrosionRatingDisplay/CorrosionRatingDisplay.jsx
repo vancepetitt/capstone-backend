@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Chart} from 'react-google-charts';
 import { useLocation, useNavigate } from "react-router-dom";
+import "./CorrosionRatingDisplay.css"
 
 const CorrosionRatingDisplay = (props) => {
     
@@ -86,10 +87,12 @@ const CorrosionRatingDisplay = (props) => {
             <h2>Concentration: {state.test.environment.concentration}%</h2>
             <h2>Temperature: {state.test.environment.temperature}C</h2>
             <h2>Test Duration: {state.test.duration} days</h2>
-            <Chart chartType="ColumnChart" width="50%" height="400px" data={generateDataForChart()}></Chart>
-            <p>Localized observations: {state.test.localized}</p>
-            <h2>Rating: {rating}</h2>
-            <p>{ratingDescription}</p>
+            <li>
+                <Chart chartType="ColumnChart" width="80%" height="400px" data={generateDataForChart()}></Chart>
+                <p height="400px">Localized observations: {state.test.localized}</p>
+            </li>
+                <h2>Rating: {rating}</h2>
+                <p>{ratingDescription}</p>
         </div>
      );
 };

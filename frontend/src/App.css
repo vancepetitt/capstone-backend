@@ -10,12 +10,23 @@
 
 html {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Helvetica", sans-serif;
+  background-color: steelblue;
+}
+
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: lightgrey;
+  width: 80%;
+  padding-bottom: 100px;
 }
 
 p {
   font-size: 20px;
 }
+
+
 
 button {
   background-color: transparent;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import "./CommentList.css"
 
 const CommentList = ({test}) => {
 
@@ -23,7 +24,7 @@ const CommentList = ({test}) => {
     }, []);
 
     return (
-        <div>
+        <div className="comments">
             {comments &&
             comments.map((comment) => (
             <p key={comment.id}>

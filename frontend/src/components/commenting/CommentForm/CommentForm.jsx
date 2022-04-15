@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
 import useAuth from "../../../hooks/useAuth";
+import "./CommentForm.css"
 
 const CommentForm = ({test}) => {
     
@@ -21,7 +22,7 @@ const CommentForm = ({test}) => {
 
 
     return ( 
-        <form onSubmit={handleSubmitForm}>
+        <form className="comment-form" onSubmit={handleSubmitForm}>
             <label>Comment:</label>
             <input type='text' placeholder="Add your insight to the discussion!" value={newText} onChange={(event) => setNewText(event.target.value)}/>
             <button type='submit'>Post</button>
