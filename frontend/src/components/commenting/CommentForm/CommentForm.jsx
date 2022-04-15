@@ -25,7 +25,8 @@ const CommentForm = ({test}) => {
         <form className="comment-form" onSubmit={handleSubmitForm}>
             <label>Comment:</label>
             <input type='text' placeholder="Add your insight to the discussion!" value={newText} onChange={(event) => setNewText(event.target.value)}/>
-            <button type='submit'>Post</button>
+            <br>
+            </br><button type='submit'>Post</button>
         </form>
      );
 }

@@ -28,8 +28,10 @@ const CommentList = ({test}) => {
             {comments &&
             comments.map((comment) => (
             <p key={comment.id}>
-                {comment.user.first_name} {comment.user.last_name}<br></br>
-                {comment.text}<br></br>
+                <a>{comment.user.first_name} {comment.user.last_name}</a>
+                <br></br>
+                {comment.text}
+                <br></br>
             </p>
             ))}
         </div>

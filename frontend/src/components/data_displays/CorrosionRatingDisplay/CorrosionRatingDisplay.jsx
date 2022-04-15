@@ -78,8 +78,8 @@ const CorrosionRatingDisplay = (props) => {
         console.log("data", data)
         return data;        
     };
-
-
+    
+    
     return ( 
         <div>
             <h2>Material: {state.test.material.designation}</h2>
@@ -89,7 +89,7 @@ const CorrosionRatingDisplay = (props) => {
             <h2>Test Duration: {state.test.duration} days</h2>
             <li>
                 <Chart chartType="ColumnChart" width="80%" height="400px" data={generateDataForChart()}></Chart>
-                <p height="400px">Localized observations: {state.test.localized}</p>
+                <p height="400px">Localized observations: <br></br>{state.test.localized}</p>
             </li>
                 <h2>Rating: {rating}</h2>
                 <p>{ratingDescription}</p>

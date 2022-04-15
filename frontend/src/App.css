@@ -11,7 +11,7 @@
 html {
   box-sizing: border-box;
   font-family: "Helvetica", sans-serif;
-  background-color: steelblue;
+  background-color: rgba(129, 105, 78, 0.596);
 }
 
 body {
@@ -20,6 +20,7 @@ body {
   background-color: lightgrey;
   width: 80%;
   padding-bottom: 100px;
+  box-shadow:0 0 10px black;
 }
 
 p {
@@ -67,3 +68,16 @@ button:hover {
   padding: 3px 7px;
   font-size: 17px;
 }
+
+table {
+  border-style: solid;
+  border-color: steelblue;
+  border-width: 3px;
+}
+
+table.tr {
+  border-style: solid;
+  border-color: steelblue;
+  border-width: 3px;
+}
+
