@@ -18,7 +18,7 @@ const HomePage = () => {
 
   async function getCompleteTestData() {
     let response = await axios.get('http://127.0.0.1:8000/api/test_data/')
-    console.log('complete test data', response.data)
+    //console.log('complete test data', response.data)
     setCompleteTestData(response.data)
   }
 

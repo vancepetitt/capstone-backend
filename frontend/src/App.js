@@ -92,7 +92,7 @@ function App() {
           path="/input"
           element={
             <PrivateRoute>
-              <TestDataInputPage />
+              <TestDataInputPage completeTestData={completeTestData}/>
             </PrivateRoute>
           }
         />

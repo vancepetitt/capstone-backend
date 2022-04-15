@@ -1,3 +1,4 @@
+import axios from "axios"
 import React, {useState, useEffect} from "react"
 
 
@@ -12,8 +13,9 @@ const NewTestForm = (props) => {
     const [newLocalized, setNewLocalized] = useState('')
     const [newEnvironmentId, setNewEnvironmentId] = useState('')
     const [newMaterialId, setNewMaterialId] = useState('')
-    
-    function addNewTest(event) {
+
+
+    function addNewTest(event) {        
         event.preventDefault();
         let test = {
             corrosion_rate: newRate,
@@ -49,6 +51,10 @@ const NewTestForm = (props) => {
                 <br></br>
                 <input type="text" placeholder="Enter MaterialId..." value={newMaterialId} onChange={(event) => setNewMaterialId(event.target.value)}></input>
                 <br></br>
+                {/* <label>Choose a material:</label>
+                <select id="materials">
+                    <option value="1">1</option>
+                </select> */}
             </form>
             <button type="submit" onClick={addNewTest}>Enter Data</button>
         </div>
