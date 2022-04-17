@@ -11,12 +11,68 @@ const NewTestForm = (props) => {
     // const [newFamily, setNewFamily] = useState([])
     const [newRate, setNewRate] = useState('')
     const [newLocalized, setNewLocalized] = useState('')
+    // attempt env input
+    const [newEnvName, setNewEnvName] = useState('')
+    const [newEnvConc, setNewEnvConc] = useState('')
+    const [newEnvTemp, setNewEnvTemp] = useState('')
+    const [newEnvDur, setNewEnvDur] = useState('')
     const [newEnvironmentId, setNewEnvironmentId] = useState('')
     const [newMaterialId, setNewMaterialId] = useState('')
+    const [envs, setEnvs] = useState('')
 
+    async function getEnvs() {
+        let response = await axios.get('http://127.0.0.1:8000/api/environments/')
+        console.log('envs', response.data);
+        setEnvs(response)
+    };
+
+    async function createEnv () {
+        let response = await axios.post('http://127.0.0.1:8000/api/environments/')
+            console.log('created env', response.data)
+            setNewEnvironmentId(response.data.id)
+    };
+
+    function checkEnvs () {
+        let checker = envs.data.filter((environment) => {
+                if (newEnvName === environment.name && parseInt(newEnvConc) === environment.concentration && parseInt(newEnvTemp) === environment.temperature && parseInt(newEnvDur) === environment.duration) {
+                    setNewEnvironmentId(environment.id)
+                    return true    
+                } else {return false}});
+        console.log('checker', checker)
+
+        let length1 = checker.length
+
+        if(length1===1) {
+            console.log('newEnvlId', newEnvironmentId)
+        }
+        else {
+            let environment = {
+                name: newEnvName,
+                concentration: newEnvConc,
+                temperature: newEnvTemp,
+                duration: newEnvDur,
+            }
+            createEnv(environment)
+        }
+    };
 
     function addNewTest(event) {        
         event.preventDefault();
+        let environment = {
+            name: newEnvName,
+            concentration: newEnvConc,
+            temperature: newEnvTemp,
+            duration: newEnvDur,
+        }
+        console.log(environment)
+        
+        getEnvs();
+        debugger
+        checkEnvs();
+        console.log(newEnvironmentId)
+        setTimeout(() => {console.log('trying')}, 500);
+
+
         let test = {
             corrosion_rate: newRate,
             localized: newLocalized,
@@ -33,6 +89,7 @@ const NewTestForm = (props) => {
     return ( 
         <div>
             <form>
+                
                 {/* <input type="text" placeholder="Enter environment..." value={newName} onChange={(event) => setNewName(event.target.value)}></input>
                 <br></br>
                 <input type="text" placeholder="Enter concentration (volume %)..." value={newConcentration} onChange={(event) => setNewConcentration(event.target.value)}></input>
@@ -47,8 +104,20 @@ const NewTestForm = (props) => {
                 <br></br>
                 <input type="text" placeholder="Enter localized corrosion (enter 'none' if no observations are made)..." value={newLocalized} onChange={(event) => setNewLocalized(event.target.value)}></input>
                 <br></br>
-                <input type="text" placeholder="Enter EnvironmentId..." value={newEnvironmentId} onChange={(event) => setNewEnvironmentId(event.target.value)}></input>
+                {/* <input type="text" placeholder="Enter EnvironmentId..." value={newEnvironmentId} onChange={(event) => setNewEnvironmentId(event.target.value)}></input>
+                <br></br> */}
+                {/* ATTMEPTING ENV DUAL INPUT*/}
+                <input type="text" placeholder="Enter environment name..." value={newEnvName} onChange={(event) => setNewEnvName(event.target.value)}></input>
                 <br></br>
+                <input type="text" placeholder="Enter concentration (volume %)..." value={newEnvConc} onChange={(event) => setNewEnvConc(event.target.value)}></input>
+                <br></br>
+                <input type="text" placeholder="Enter Temperature (degrees Celsius)..." value={newEnvTemp} onChange={(event) => setNewEnvTemp(event.target.value)}></input>
+                <br></br>
+                <input type="text" placeholder="Enter test duration (days)..." value={newEnvDur} onChange={(event) => setNewEnvDur(event.target.value)}></input>
+                <br></br>
+
+
+
                 {/* <input type="text" placeholder="Enter MaterialId..." value={newMaterialId} onChange={(event) => setNewMaterialId(event.target.value)}></input> */}
                 <br></br>
                 <label>Choose a material:</label>
