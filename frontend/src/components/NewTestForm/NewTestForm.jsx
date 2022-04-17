@@ -57,6 +57,12 @@ const NewTestForm = (props) => {
                     <option value="1">316L SS</option>
                     <option value="2">C-276</option>
                     <option value="3">C-2000</option>
+                    <option value="5">C-22</option>
+                    <option value="6">304L SS</option>
+                    <option value="7">2205</option>
+                    <option value="8">2507</option>
+                    <option value="9">Alloy 625</option>
+                    <option value="10">Alloy 20</option>
                 </select>
             </form>
             <button type="submit" onClick={addNewTest}>Enter Data</button>
