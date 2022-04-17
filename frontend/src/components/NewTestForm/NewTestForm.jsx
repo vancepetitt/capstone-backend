@@ -72,8 +72,17 @@ const NewTestForm = (props) => {
         let length1 = checker.length
         if(length1===1) {
             console.log('checker id', checker[0].id)
-            setNewEnvironmentId(checker[0].id)
-            console.log('4a')
+            let test = {
+                corrosion_rate: newRate,
+                localized: newLocalized,
+                environment_id: checker[0].id,
+                material_id: newMaterialId,
+            };
+            console.log('7a');
+            console.log(test);
+            //debugger
+            props.createTest(test);
+
         }
         else {
             console.log('4b')
