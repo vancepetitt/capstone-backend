@@ -26,11 +26,18 @@ const TestDataInputPage = () => {
     // };
 
     
+    // async function createEnv(prop){
+    //     let response = await axios.post('http://127.0.0.1:8000/api/environments/', prop);
+    //     console.log(response.data.id);
+    //     setNewlyCreatedEnvId(response.data.id)
+    //     console.log(newlyCreatedEnvId)       
+    // }
     async function createTest(prop){
         let response = await axios.post('http://127.0.0.1:8000/api/test_data/', prop);
         console.log(response.data);
         if (response.data.id >= 0) {
-            return alert('Test Data entered Sucessfully!')
+            alert('Test Data entered Sucessfully!')
+            return window.location.reload();
         }
         else {
             return alert('Error. Please double-check entries.');
