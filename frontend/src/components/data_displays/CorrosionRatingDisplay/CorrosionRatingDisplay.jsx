@@ -72,7 +72,7 @@ const CorrosionRatingDisplay = (props) => {
     function generateDataForChart() {
 
         const data = [
-            ["material", "rate", {role: "style"}],
+            ["material", "corrosion rate mil/yr", {role: "style"}],
             [material, rate, ratingColor]
         ];
         console.log("data", data)
@@ -87,10 +87,8 @@ const CorrosionRatingDisplay = (props) => {
             <h2>Concentration: {state.test.environment.concentration}%</h2>
             <h2>Temperature: {state.test.environment.temperature}C</h2>
             <h2>Test Duration: {state.test.duration} days</h2>
-            <li>
-                <Chart chartType="ColumnChart" width="80%" height="400px" data={generateDataForChart()}></Chart>
+                <Chart chartType="ColumnChart" width="80%" height="400px" data={generateDataForChart()} ></Chart>
                 <p height="400px">Localized observations: <br></br>{state.test.localized}</p>
-            </li>
                 <h2>Rating: {rating}</h2>
                 <p>{ratingDescription}</p>
         </div>

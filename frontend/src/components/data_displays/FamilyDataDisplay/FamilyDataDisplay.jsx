@@ -7,71 +7,72 @@ const FamilyDataDisplay = ({tests}) => {
     
     const {state} = useLocation();
     
-    const [familyForDisplay, setFamilyForDisplay] = useState(['']);
-    const [ratingFamily, setRatingFamily] = useState('');
-    const [ratingColorFamily, setRatingColorFamily] = useState('');
+    // const [familyForDisplay, setFamilyForDisplay] = useState(['']);
+    // const [ratingFamily, setRatingFamily] = useState('');
+    // const [ratingColorFamily, setRatingColorFamily] = useState('');
     
-    // let rate = parseInt(state.test.corrosion_rate);
-    // let localized = state.test.localized;
+    // // let rate = parseInt(state.test.corrosion_rate);
+    // // let localized = state.test.localized;
 
-    function generateRating () {
+    // function generateRating () {
         
-        let rate = parseInt(state.test.corrosion_rate);
-        let localized = state.test.localized;
+    //     let rate = parseInt(state.test.corrosion_rate);
+    //     let localized = state.test.localized;
         
-        let rating = '';
-        if (rate < 5 && localized === "none") {
-            ratingFamily = 'Recommended';
-        }
-        else if (rate < 5 && localized !== "none") {
-            ratingFamily = 'Recommended with caution';
-        }
-         else if (rate >= 20) {
-            ratingFamily = 'Not Recommended';
-        }
-        else if (rate < 20 && rate >= 5 && localized === "none") {
-            ratingFamily = 'Recommended with caution';
-        }
-        else if (localized.includes('severe')) {
-            ratingFamily = 'Not Recommended';
-        }
-        else {
-            ratingFamily = 'Recommended with caution';
-        };
-        console.log(ratingFamily);
-        setRatingFamily(ratingFamily);
+    //     let ratingFamily = '';
+    //     if (rate < 5 && localized === "none") {
+    //         ratingFamily = 'Recommended';
+    //     }
+    //     else if (rate < 5 && localized !== "none") {
+    //         ratingFamily = 'Recommended with caution';
+    //     }
+    //      else if (rate >= 20) {
+    //         ratingFamily = 'Not Recommended';
+    //     }
+    //     else if (rate < 20 && rate >= 5 && localized === "none") {
+    //         ratingFamily = 'Recommended with caution';
+    //     }
+    //     else if (localized.includes('severe')) {
+    //         ratingFamily = 'Not Recommended';
+    //     }
+    //     else {
+    //         ratingFamily = 'Recommended with caution';
+    //     };
+    //     console.log(ratingFamily);
+    //     //setRatingFamily(ratingFamily);
 
-        let ratingColor = ''
-        if (ratingFamily === 'Recommended') {
-            ratingColorFamily = 'Green';
-        }
-        else if (ratingFamily === 'Recommended with caution') {
-            ratingColorFamily = 'Yellow';
-        }
-        else if (ratingFamily === 'Not Recommended') {
-            ratingColorFamily = 'Red';
-        };
-        console.log('color', ratingColor);
-        setRatingColorFamily(ratingColorFamily);
-    };
+    //     let ratingColorFamily = ''
+    //     if (ratingFamily === 'Recommended') {
+    //         ratingColorFamily = 'Green';
+    //     }
+    //     else if (ratingFamily === 'Recommended with caution') {
+    //         ratingColorFamily = 'Yellow';
+    //     }
+    //     else if (ratingFamily === 'Not Recommended') {
+    //         ratingColorFamily = 'Red';
+    //     };
+    //     console.log('color', ratingColorFamily);
+    //     return ratingColorFamily
+    // };
+
+
     let filteredTests = tests.filter(test => test.environment.id === state.test.environment.id && test.material.family.id === state.test.material.family.id)
     console.log('filtered', filteredTests)
 
     let array = filteredTests.map(test => {
         filteredTests.forEach(test => {
-            let rate = parseInt(state.test.corrosion_rate);
-            let localized = state.test.localized;
-            
-            return [test.material.designation, parseFloat(test.corrosion_rate), ratingColorFamily]      
+            //generateRating()
+            return [test.material.designation, parseFloat(test.corrosion_rate)]      
             });
-    return [test.material.designation, parseFloat(test.corrosion_rate), ratingColorFamily ]
+
+    return [test.material.designation, parseFloat(test.corrosion_rate) ]
     });
     console.log('array', array)
 
     function generateFamilyChartData() {
         
         const data = [
-            ["material", "corrosion rate (mil/yr)", {role: "style"}],
+            ["material", "corrosion rate (mil/yr)"],
             ...array
         ];
         console.log("family data", data)

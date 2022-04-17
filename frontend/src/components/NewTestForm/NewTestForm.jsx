@@ -49,12 +49,15 @@ const NewTestForm = (props) => {
                 <br></br>
                 <input type="text" placeholder="Enter EnvironmentId..." value={newEnvironmentId} onChange={(event) => setNewEnvironmentId(event.target.value)}></input>
                 <br></br>
-                <input type="text" placeholder="Enter MaterialId..." value={newMaterialId} onChange={(event) => setNewMaterialId(event.target.value)}></input>
+                {/* <input type="text" placeholder="Enter MaterialId..." value={newMaterialId} onChange={(event) => setNewMaterialId(event.target.value)}></input> */}
                 <br></br>
-                {/* <label>Choose a material:</label>
-                <select id="materials">
-                    <option value="1">1</option>
-                </select> */}
+                <label>Choose a material:</label>
+                <select id="materials" value={newMaterialId} onChange={(event) => setNewMaterialId(event.target.value)}>
+                    <option value="">---</option>
+                    <option value="1">316L SS</option>
+                    <option value="2">C-276</option>
+                    <option value="3">C-2000</option>
+                </select>
             </form>
             <button type="submit" onClick={addNewTest}>Enter Data</button>
         </div>

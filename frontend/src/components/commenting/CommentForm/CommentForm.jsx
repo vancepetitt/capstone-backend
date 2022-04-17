@@ -18,13 +18,13 @@ const CommentForm = ({test}) => {
             user_id: user.id,
         };
         console.log(newComment);
-    await axios.post('http://127.0.0.1:8000/api/comments/', newComment)};
-
+        await axios.post('http://127.0.0.1:8000/api/comments/', newComment)};
 
     return ( 
         <form className="comment-form" onSubmit={handleSubmitForm}>
-            <label>Comment:</label>
-            <input type='text' placeholder="Add your insight to the discussion!" value={newText} onChange={(event) => setNewText(event.target.value)}/>
+            <label>Add your insight to the discussion!:</label>
+            <br></br>
+            <input type='text' placeholder="Type comment here." value={newText} onChange={(event) => setNewText(event.target.value)}/>
             <br>
             </br><button type='submit'>Post</button>
         </form>
