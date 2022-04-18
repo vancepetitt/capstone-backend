@@ -27,10 +27,10 @@ const EnvironmentSearchResults = ({completeTestData, searchName, searchConcentra
                 return false
             }
         })
-        debugger
+        //debugger
         setSearchData(response)
         console.log(searchData)
-        debugger
+        //debugger
         let filtered = response.filter((test) => {
             if(test.corrosion_rate < 5 && test.localized === "none") {
                 return true
