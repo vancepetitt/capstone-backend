@@ -4,14 +4,8 @@ import React, {useState, useEffect} from "react"
 
 const NewTestForm = (props) => {
     
-    // const [newName, setNewName] = useState([])
-    // const [newConcentration, setNewConcentration] = useState([])
-    // const [newTemperature, setNewTemperature] = useState([])
-    // const [newMaterial, setNewMaterial] = useState([])
-    // const [newFamily, setNewFamily] = useState([])
     const [newRate, setNewRate] = useState('')
     const [newLocalized, setNewLocalized] = useState('')
-    // attempt env input
     const [newEnvName, setNewEnvName] = useState('')
     const [newEnvConc, setNewEnvConc] = useState('')
     const [newEnvTemp, setNewEnvTemp] = useState('')
@@ -40,7 +34,7 @@ const NewTestForm = (props) => {
             duration: parseInt(newEnvDur),
         }
         console.log('5b')
-        debugger
+        //debugger
         let response = await axios.post('http://127.0.0.1:8000/api/environments/', environment);
         alert('New environment logged in database.')
         console.log(response.data.id);
@@ -140,12 +134,6 @@ const NewTestForm = (props) => {
     return ( 
         <div>
             <form>
-                <input type="text" placeholder="Enter corrosion rate (mils/yr)..." value={newRate} onChange={(event) => setNewRate(event.target.value)}></input>
-                <br></br>
-                <input type="text" placeholder="Enter localized corrosion (enter 'none' if no observations are made)..." value={newLocalized} onChange={(event) => setNewLocalized(event.target.value)}></input>
-                <br></br>
-                {/* <input type="text" placeholder="Enter EnvironmentId..." value={newEnvironmentId} onChange={(event) => setNewEnvironmentId(event.target.value)}></input>
-                <br></br> */}
                 {/* ATTMEPTING ENV DUAL INPUT*/}
                 <input type="text" placeholder="Enter environment name..." value={newEnvName} onChange={(event) => setNewEnvName(event.target.value)}></input>
                 <br></br>
@@ -169,6 +157,10 @@ const NewTestForm = (props) => {
                     <option value="9">Alloy 625</option>
                     <option value="10">Alloy 20</option>
                 </select>
+                <input type="text" placeholder="Enter corrosion rate (mils/yr)..." value={newRate} onChange={(event) => setNewRate(event.target.value)}></input>
+                <br></br>
+                <input type="text" placeholder="Enter localized corrosion (enter 'none' if no observations are made)..." value={newLocalized} onChange={(event) => setNewLocalized(event.target.value)}></input>
+                <br></br>
             </form>
             <button type="submit" onClick={addNewTest}>Enter Data</button>
         </div>

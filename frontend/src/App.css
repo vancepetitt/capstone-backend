@@ -11,7 +11,7 @@
 html {
   box-sizing: border-box;
   font-family: "Helvetica", sans-serif;
-  background-color: rgba(129, 105, 78, 0.596);
+  background-color: rgba(49, 51, 153, 0.438);
 }
 
 body {
@@ -31,12 +31,15 @@ p {
 
 button {
   background-color: transparent;
+  border-radius: 12px;
   border: 2px solid steelblue;
   color: steelblue;
   font-size: 1rem;
   font-family: inherit;
   max-width: 100px;
   padding: 0.5rem 0.5rem;
+  margin-left: 15%;
+  margin-bottom: 5%
 }
 
 button:hover {
@@ -69,6 +72,10 @@ button:hover {
   font-size: 17px;
 }
 
+label {
+  margin-left: 5%
+}
+
 table {
   border-style: solid;
   border-color: steelblue;
@@ -81,3 +88,9 @@ table.tr {
   border-width: 3px;
 }
 
+select {
+  height: 25px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}

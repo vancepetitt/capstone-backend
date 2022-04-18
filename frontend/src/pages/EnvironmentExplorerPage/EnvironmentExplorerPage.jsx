@@ -22,7 +22,9 @@ const EnvironmentExplorerPage = () => {
 
     return ( 
         <div>
-            <h1>Env. Expl</h1>
+            <h1>Environment Explorer</h1>
+            <br></br>
+            <h3>Search for a specific environment here to display a list of materials recommended for use in that environment. Results can be selected for more detailed data. If data exists for an environment at or above the temperature of interest, the data will be considered in the request.</h3>
             <form>
                 <input type="text" placeholder="Enter environment..." value={searchName} onChange={(event) => setSearchName(event.target.value)}></input>
                 <input type="text" placeholder="Enter concentration (volume %)..." value={searchConcentration} onChange={(event) => setSearchConcentration(event.target.value)}></input>

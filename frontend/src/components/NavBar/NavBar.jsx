@@ -11,8 +11,8 @@ const Navbar = () => {
     <div className="navBar">
       <ul>
         <li className="brand">
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>ChemCorrosion App</b>
+          <Link to="/" style={{ fontSize:"larger", textDecoration: "none", color: "white", letterSpacing: "medium" }}>
+            <b>Chem-Compatible App</b>
           </Link>
         </li>
         <li>

@@ -6,32 +6,7 @@ import axios from "axios";
 const TestDataInputPage = () => {
     
     const [user, token] = useAuth();
-    // const [allMaterials, setAllMaterials] = useState('')
-    // const [allEnv, setAllEnv] = useState('')
 
-    
-    // useEffect(() => {
-    //     populateOptions()
-    // }, []);
-
-    // async function populateOptions() {
-    //     let responseMat = await axios.get('http://127.0.0.1:8000/api/materials/')
-    //     setAllMaterials(responseMat.data);
-
-    //     let responseEnv = await axios.get('http://127.0.0.1:8000/api/environments/')
-    //     setAllEnv(responseEnv.data);
-
-    //     console.log('mat', allMaterials)
-    //     console.log('env', allEnv)
-    // };
-
-    
-    // async function createEnv(prop){
-    //     let response = await axios.post('http://127.0.0.1:8000/api/environments/', prop);
-    //     console.log(response.data.id);
-    //     setNewlyCreatedEnvId(response.data.id)
-    //     console.log(newlyCreatedEnvId)       
-    // }
     async function createTest(prop){
         let response = await axios.post('http://127.0.0.1:8000/api/test_data/', prop);
         console.log(response.data);
@@ -45,7 +20,9 @@ const TestDataInputPage = () => {
 
     return ( 
         <div>
-            <h1>Input Data Here</h1>
+            <h1 >Test Data Input:</h1>
+            <br></br>
+            <h3>Enter data below (no units required). <br></br>New environments are automatically logged while entering test data, existing environments will not create a duplicate. Confirmation message will display upon successful test data entry. (If no confirmation message appears, please re-check your entries)</h3>
             <NewTestForm createTest={createTest}/>
         </div>
      );
