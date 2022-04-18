@@ -18,7 +18,9 @@ const CommentForm = ({test}) => {
             user_id: user.id,
         };
         console.log(newComment);
-        await axios.post('http://127.0.0.1:8000/api/comments/', newComment)};
+        await axios.post('http://127.0.0.1:8000/api/comments/', newComment)
+        //alert('Comment posted!')
+        window.location.reload()};
 
     return ( 
         <form className="comment-form" onSubmit={handleSubmitForm}>

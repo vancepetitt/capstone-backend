@@ -24,7 +24,8 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h1>Welcome, {user.username}!<br></br> ({user.last_name}, {user.first_name})</h1>
+      <h1>Welcome, {user.username}!<br></br>({user.first_name})</h1>
+      <br></br>
       <h2>Thank you for using the Chem-Compatibile app!</h2>
       <br></br>
       <br></br>
