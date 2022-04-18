@@ -15,6 +15,7 @@ const EnvironmentExplorerPage = () => {
         console.log(searchName);
         setSearchName(searchName);
         setSearchConcentration(searchConcentration);
+        setSearchTemperature(searchTemperature)
         navigate("/searchenvironment", {state:{searchName:searchName, searchConcentration:searchConcentration, searchTemperature:searchTemperature}});
     };
 

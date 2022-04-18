@@ -1,26 +1,30 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
-const EnvironmentSearchResultsDisplay = ({searchData}) => {
+const EnvironmentSearchResultsDisplay = ({rateFiltered}) => {
     
     const navigate = useNavigate();
-    const [rateFiltered, setRateFiltered] = useState([])
-    console.log('ratefiltered', rateFiltered)
+    //const [rateFiltered, setRateFiltered] = useState([])
 
-    useEffect(() => {
-        const rateFilter = function() {
-            let response = searchData.filter((test) => {
-                if(test.corrosion_rate < 5 && test.localized === "none") {
-                    return true
-                } else {
-                    return false
-                }
-            })
-            setRateFiltered(response)
-        };
-        rateFilter();
+    // useEffect(() => {
+    //     rateFilter()
+    // }, []);
 
-    }, []);
+
+    // const rateFilter = function() {
+    //     debugger
+    //     let response = searchData.filter((test) => {
+    //         if(test.corrosion_rate < 5 && test.localized === "none") {
+    //             return true
+    //         } else {
+    //             return false
+    //         }
+    //     })
+    //     setRateFiltered(response);
+    //     console.log('rateFiltered', rateFiltered)
+    // };
+
+
 
     return ( 
         <div>
