@@ -17,9 +17,10 @@ li {
 }
 
 .navBar button {
-  background: lightgray;
+  font-style: bold;
+  background: rgba(127, 181, 226, 0.603);
   border: 2px solid white;
-  color: black;
+  color: rgb(255, 255, 255);
   padding: 0.4rem 0.5rem;
 }
 
