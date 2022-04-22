@@ -135,16 +135,23 @@ const NewTestForm = (props) => {
         <div>
             <form>
                 {/* ATTMEPTING ENV DUAL INPUT*/}
+                <br></br>
+                <label>Environment Name:</label>
                 <input type="text" placeholder="Enter environment name..." value={newEnvName} onChange={(event) => setNewEnvName(event.target.value)}></input>
                 <br></br>
+                <label>Concentration:</label>
                 <input type="text" placeholder="Enter concentration (volume %)..." value={newEnvConc} onChange={(event) => setNewEnvConc(event.target.value)}></input>
                 <br></br>
+                <label>Temperature:</label>
+                <br></br>
                 <input type="text" placeholder="Enter Temperature (degrees Celsius)..." value={newEnvTemp} onChange={(event) => setNewEnvTemp(event.target.value)}></input>
+                <br></br>
+                <label>Test duration:</label>
                 <br></br>
                 <input type="text" placeholder="Enter test duration (days)..." value={newEnvDur} onChange={(event) => setNewEnvDur(event.target.value)}></input>
                 <br></br>
                 <br></br>
-                <label>Choose a material:</label>
+                <label>Choose a material:</label><br></br>
                 <select id="materials" value={newMaterialId} onChange={(event) => setNewMaterialId(event.target.value)}>
                     <option value="">---</option>
                     <option value="1">316L SS</option>
@@ -157,8 +164,12 @@ const NewTestForm = (props) => {
                     <option value="9">Alloy 625</option>
                     <option value="10">Alloy 20</option>
                 </select>
+                <br></br>
+                <br></br>
+                <label>Corrosion Rate:</label>
                 <input type="text" placeholder="Enter corrosion rate (mils/yr)..." value={newRate} onChange={(event) => setNewRate(event.target.value)}></input>
                 <br></br>
+                <label>Localized corrosion observations:</label>
                 <input type="text" placeholder="Enter localized corrosion (enter 'none' if no observations are made)..." value={newLocalized} onChange={(event) => setNewLocalized(event.target.value)}></input>
                 <br></br>
             </form>

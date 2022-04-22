@@ -30,10 +30,10 @@ const HomePage = () => {
       <br></br>
       <br></br>
       <h2>Using the appication:</h2>
-      <p>After logging in, a registered employee can utilize the links to perform the task of their choice:<br></br><br></br>"Data by Material" - Search materials and explore their performance data<br></br>"Environment Explorer" - filter environments and get recommended materials<br></br>"Input test Data" - Add test data to the database</p>
+      <p >After logging in, a registered employee can utilize the links to perform the task of their choice:<br></br><br></br>"Data by Material" - Search materials and explore their performance data<br></br>"Environment Explorer" - filter environments and get recommended materials<br></br>"Input test Data" - Add test data to the database</p>
       <br></br>
-      <h2>What we're about</h2>
-      <p>Corrosion causes upwards of an estimated $2.5T/year. The careful selection of materials suited for the harsh environments found in industrial settings can help engineers to design equipment with long and safe operational lifetimes. <br></br><br></br>This appication is intended to be used as a powerful databasing system: allowing for the storage, retrieval, comparison, and input of chemical compatibility data - and connecting that data to the plant and field settings where it is most crucial.</p>
+      <h2>About the App:</h2>
+      <p>Corrosion causes upwards of an estimated $2.5T/year. The deliberate selection of materials suited for the complex environments found in the chemical industry is paramount to providing safe and reliable operational lifetimes. <br></br><br></br>This appication is intended to be used as a powerful databasing system: allowing for the storage, retrieval, comparison, and input of chemical compatibility data - and connecting that data to the plant and field settings where it is most crucial.</p>
       
     </div>
   );
