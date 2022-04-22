@@ -1,9 +1,10 @@
 import axios from "axios"
+import useAuth from "../../hooks/useAuth";
 import React, {useState, useEffect} from "react"
 
 
 const NewTestForm = (props) => {
-    
+    const [user, token] = useAuth()
     const [newRate, setNewRate] = useState('')
     const [newLocalized, setNewLocalized] = useState('')
     const [newEnvName, setNewEnvName] = useState('')
@@ -48,6 +49,7 @@ const NewTestForm = (props) => {
             localized: newLocalized,
             environment_id: response.data.id,
             material_id: newMaterialId,
+            user_id: user.id
         };
         console.log('6b')
         console.log(testn);
@@ -71,6 +73,7 @@ const NewTestForm = (props) => {
                 localized: newLocalized,
                 environment_id: checker[0].id,
                 material_id: newMaterialId,
+                user_id: user.id
             };
             console.log('7a');
             console.log(test);
@@ -106,6 +109,7 @@ const NewTestForm = (props) => {
             localized: newLocalized,
             environment_id: newEnvironmentId,
             material_id: newMaterialId,
+            user_id: user.id
         };
         console.log(test);
         console.log('6a')
@@ -118,6 +122,7 @@ const NewTestForm = (props) => {
             localized: newLocalized,
             environment_id: newEnvironmentId,
             material_id: newMaterialId,
+            user_id: user.id
         };
         console.log('7a');
         console.log(test);
