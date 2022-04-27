@@ -28,7 +28,8 @@ const SelectedDataDisplayPage = () => {
 
     return ( 
         <div>
-            <h1>Data Display</h1>
+            <h1>Data Display:</h1>
+            <br></br>
             <CorrosionRatingDisplay test={state.test}/>
             <TemperatureVariation tests={tests} test={state.test}/>
             <FamilyDataDisplay tests={tests} test={state.test}/>

@@ -128,7 +128,6 @@ const NewTestForm = (props) => {
         console.log(test);
         //debugger
         props.createTest(test);
-        //setNew...(''); //allows the form to clear text that had been entered
     };
 
 
@@ -142,12 +141,15 @@ const NewTestForm = (props) => {
                 {/* ATTMEPTING ENV DUAL INPUT*/}
                 <br></br>
                 <label>Environment Name:</label>
+                <br></br>
                 <input type="text" placeholder="Enter environment name..." value={newEnvName} onChange={(event) => setNewEnvName(event.target.value)}></input>
                 <br></br>
                 <label>Concentration:</label>
+                <br></br>
                 <input type="text" placeholder="Enter concentration (volume %)..." value={newEnvConc} onChange={(event) => setNewEnvConc(event.target.value)}></input>
                 <br></br>
                 <label>Temperature:</label>
+                <br></br>
                 <br></br>
                 <input type="text" placeholder="Enter Temperature (degrees Celsius)..." value={newEnvTemp} onChange={(event) => setNewEnvTemp(event.target.value)}></input>
                 <br></br>

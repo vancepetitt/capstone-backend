@@ -23,7 +23,9 @@ const MaterialSearchPage = ({completeTestResults}) => {
             <h1>Search Test Data by Material:</h1>
             <form>
                 <div>
-                    <input type="text" placeholder="Search by material or material family..." value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} ></input>
+                    <label><br></br>Enter material or material family:</label>
+                    <br></br>
+                    <input type="text" placeholder='Search by material or material family...  Example: "C-276" or "NiCrMo Alloys"' value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} ></input>
                 </div>
                 <button onClick={handleSubmit} type="submit">Search</button>
             </form>
